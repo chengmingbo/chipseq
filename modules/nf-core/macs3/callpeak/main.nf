@@ -28,6 +28,7 @@ process MACS3_CALLPEAK {
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
     def args_list = args.tokenize()
+    meta.single_end = true
     def format    = meta.single_end ? 'BAM' : 'BAMPE'
     def control   = controlbam ? "--control $controlbam" : ''
     if(args_list.contains('--format')){

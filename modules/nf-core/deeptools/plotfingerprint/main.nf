@@ -22,6 +22,7 @@ process DEEPTOOLS_PLOTFINGERPRINT {
     script:
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
+    meta.single_end = true
     def extend   = (meta.single_end && params.fragment_size > 0) ? "--extendReads ${params.fragment_size}" : ''
     """
     plotFingerprint \\

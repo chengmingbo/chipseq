@@ -19,7 +19,7 @@ process SUBREAD_FEATURECOUNTS {
     task.ext.when == null || task.ext.when
 
     script:
-    def meta.single_end = true
+    meta.single_end = true
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
     def paired_end = meta.single_end ? '' : '-p'

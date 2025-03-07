@@ -57,6 +57,7 @@ process CHROMAP_CHROMAP {
         rm ${prefix}.${file_extension}
         """
     }
+    meta.single_end = true
     if (meta.single_end) {
         """
         chromap \\

@@ -22,6 +22,7 @@ process UMITOOLS_EXTRACT {
     script:
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
+    meta.single_end = true
     if (meta.single_end) {
         """
         umi_tools \\
